@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Página inicial</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <header>
+        <h1>Sistema de Computadores com defeito</h1>
+    </header>
+    
+
+    <div class="main-buttons">
+        <a th:href="@{/cadastro}">Cadastrar Computador</a>
+        <a th:href="@{/listagem}">Listar Computadores cadastrados</a>
+    </div>
+    
+</body>
+</html>

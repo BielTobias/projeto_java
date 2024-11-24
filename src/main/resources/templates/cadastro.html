@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Cadastro</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <header>
+        <h1>Sistema de Cadastro</h1>
+    </header>
+    
+
+    <!-- O Object é para variaveis, onde joga em uma classe de java
+
+    SOMENTE THYMELEAFT:
+        - @link
+        - $variaveis (objetos) 
+        - *Acesso de leitura em um atributo
+    -->
+        <div class="box">
+            <form th:action="@{/cadastro}" method="post" th:object="${computador}"> 
+
+                Modelo: <input type="text" th:field="*{modelo}" required><br>
+                Defeito: <input type="text" th:field="*{defeito}" required><br>
+                
+                <input type="submit" value="Cadastrar" name="cadastrar">
+            
+            </form>
+        </div>
+    <a th:href="@{/}">Voltar para home</a>
+
+</body>
+</html>

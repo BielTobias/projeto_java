@@ -1,0 +1,21 @@
+server: 
+    port: 8080
+
+spring:
+    datasource:
+        url: jdbc:postgresql://dpg-ct15muggph6c73bg4840-a.oregon-postgres.render.com:5432/bancopc
+        username: bancopc_user
+        password: gjTeRN4V4ZyHezidZmXVa0KguRpBhrqJ
+        driver-class-name: org.postgresql.Driver
+        initialize: true
+    
+    jpa:
+        hibernate:
+            ddl-auto: create-drop
+            generate-ddl: true
+        
+    sql:
+        init:
+            schema-locations: classpath:/schema-postgresql.sql
+            mode: always
+            platform: postgres

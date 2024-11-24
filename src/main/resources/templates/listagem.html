@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org">
+    <head>
+        <title>Listagem de Computadores</title>
+        <link rel="stylesheet" th:href="@{/css/style.css}">
+    </head>
+    <body>
+        <header>
+            <h1>Listagem de Computadores</h1>
+        </header>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Modelo</th>
+                    <th>Defeito</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="computador : ${computador}">
+                    <td th:text="${computador.id}"></td>
+                    <td th:text="${computador.modelo}"></td>
+                    <td th:text="${computador.defeito}"></td>
+                    <td><a th:href="@{'/atualizar/' + ${computador.id}}">Atualizar</a></td>
+                    <td>
+                        <form class="form-deletar" th:action="@{'/deletar/' + ${computador.id}}" method="post">
+                            <input class="botao-apagar" type="submit" value="Apagar">
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <a th:href="@{/}">Voltar para home</a>
+    </body>
+</html>
